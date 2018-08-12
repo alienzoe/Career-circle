@@ -1,32 +1,39 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./style.min.css";
+import "./sass/style.css";
 import registerServiceWorker from "./registerServiceWorker";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { ClientProvider, client } from "./client";
 
-import HomeComponent from "./components/HomeComponent";
+import HomeContainer from "./container/HomeContainer";
+import LoginContainer from "./container/LoginContainer";
 
 class App extends React.Component {
   render() {
     return (
-      <React.Fragment>
-        <Switch>
-          <Route
-            exact
-            path="/"
-            /* component={HomeComponent} */ render={() => {
-              const root = document.querySelector("#root");
-              root.classList.add("home");
+      <Switch>
+        <Route
+          exact
+          path="/"
+          /* component={HomeContainer} */ render={() => {
+            const root = document.querySelector("#root");
+            root.className = "home";
 
-              return <HomeComponent />;
-            }}
-          />
-          {/* <Route exact path="/login" component="Login" />
-          <Route exact path="/signup" component="Signup" /> */}
-        </Switch>
-      </React.Fragment>
+            return <HomeContainer />;
+          }}
+        />
+        <Route
+          exact
+          path="/login"
+          render={() => {
+            const root = document.querySelector("#root");
+            root.className = "login";
+
+            return <LoginContainer />;
+          }}
+        />
+      </Switch>
     );
   }
 }
