@@ -8,6 +8,8 @@ import { ClientProvider, client } from "./client";
 
 import HomeContainer from "./container/HomeContainer";
 import LoginContainer from "./container/LoginContainer";
+import { MuiThemeProvider } from "@material-ui/core";
+import { theme } from "./theme";
 
 class App extends React.Component {
   render() {
@@ -39,12 +41,14 @@ class App extends React.Component {
 }
 
 ReactDOM.render(
-  <Router>
-    <ClientProvider client={client}>
-      <App />
-    </ClientProvider>
-  </Router>,
-  document.getElementById("root")
+  <MuiThemeProvider theme={theme}>
+    <Router>
+      <ClientProvider client={client}>
+        <App />
+      </ClientProvider>
+    </Router>
+  </MuiThemeProvider>,
+  document.querySelector("#root")
 );
 
 registerServiceWorker();
