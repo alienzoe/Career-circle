@@ -1,0 +1,83 @@
+.main-content {
+  height: 85vh;
+  display: flex;
+
+  section {
+    display: inherit;
+    align-items: center;
+    justify-content: flex-end;
+    flex-basis: 50%;
+    margin: 10px;
+
+    .login-container {
+      flex-basis: 60%;
+      background-color: #605f5f3d;
+      border-radius: 10px;
+      position: relative;
+
+      .authen-type {
+        margin: 0;
+        background: #7070708f;
+        border-bottom: 3px solid $secondary-color;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        display: flex;
+        text-align: center;
+
+        div {
+          width: 50%;
+          padding: 9px;
+        }
+
+        div:hover {
+          position: relative;
+          cursor: pointer;
+
+          @include anchorTransition(35px, 55px, 40%);
+        }
+
+        .active {
+          @extend div:hover;
+        }
+      }
+
+      .login-form {
+        text-align: center;
+        padding: 40px 20px 20px 20px;
+        display: flex;
+        flex-flow: nowrap column;
+        align-items: center;
+
+        button {
+          margin-top: 18px;
+          background: $secondary-color;
+        }
+
+        .others {
+          margin-top: 10px;
+          font-size: 13px;
+        }
+        
+        .social-media {
+          margin-top: 10px;
+
+          &::before {
+            content: "or";
+            display: block;
+            margin: 5px 0;
+          }
+
+          i {
+            font-size: 1.5rem;
+            margin: 0 4px;
+            cursor: pointer;
+
+            &:hover {
+              color: $secondary-color;
+            }
+          }
+        }
+      }
+    }
+  }
+}

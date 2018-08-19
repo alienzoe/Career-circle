@@ -1,0 +1,53 @@
+section {
+  .container {
+    height: 85vh;
+    display: flex;
+    flex-flow: wrap column;
+    justify-content: center;
+    align-items: center;
+
+    h1 {
+      font-weight: 200 !important;
+      font-size: 4rem;
+    }
+
+    h4 {
+      margin-top: 0;
+      font-size: 1.2rem;
+    }
+
+    form {
+      display: inline-flex;
+
+      .search {
+        position: relative;
+
+        i {
+          position: absolute;
+          top: 8px;
+          left: 6px;
+          opacity: 0.7;
+          border-right: 1px solid #c6c6c6;
+          padding-right: 3px;
+          font-size: 20px;
+        }
+
+        #autocomplete-search {
+          border: 0;
+          outline: 0;
+          width: 400px;
+          height: 35px;
+          padding: 0px 9px;
+          margin: 0;
+          text-indent: 30px;
+          background: white;
+          transition: none;
+
+          &:focus {
+            box-shadow: none;
+          }
+        }
+      }
+    }
+  }
+}
